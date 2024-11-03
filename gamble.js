@@ -8,6 +8,9 @@ const blackjackCashInput = document.getElementById("blackjackCash");
 const blackjackProfitOutput = document.getElementById("blackjackProfit");
 const blackjackHitBtn = document.getElementById("blackjackHit");
 const blackjackStandBtn = document.getElementById("blackjackStand");
+const wheelofFortunePlayBtn = document.getElementById("wheelOfFortunePlay");
+const wheelofFortuneCashInput = document.getElementById("wheelOfFortuneCash");
+const wheelofFortuneProfitOutput = document.getElementById("wheelOfFortuneProfit");
 let randomNumberGuessingLowerBound;
 let randomNumberGuessingUpperBound;
 let randomNumberGuessingCash;
@@ -17,6 +20,19 @@ let blackjackProfit;
 let blackjackPlay = false;
 let blackjackPlayerTotal;
 let blackjackDealerTotal;
+let wheelofFortuneCash;
+let wheelofFortuneProfit;
+let wheelofFortunePlay = false;
+let splitWheelofFortuneWord;
+const wheelofFortuneCategories = ["Games", "Foods", "Movies", "Music", "Sports", "Summer", "Winter", "Travel"];
+const wheelofFortuneGames = ["Fortnite", "Minecraft", "Call of Duty", "Battlefield", "Madden", "NBA 2k", "Halo", "Mortal Combat", "League of Legends"];
+const wheelofFortuneFoods = ["Hamburger", "Pizza", "Pasta", "Pancake", "Chicken", "Steak", "Cake", "Sandwich", "Ice Cream", "Donut"];
+const wheelofFortuneMovies = ["Avatar", "Avengers", "Star Wars", "The Matrix", "The Dark Knight", "Inception", "Interstellar", "The Lord of the Rings", "Avengers Endgame", "The Dark Knight Rises"];
+const wheelofFortuneMusic = ["Rock", "Pop", "Jazz", "Classical", "Rap", "Electronic", "Folk", "Hip Hop", "Techno", "Country"];
+const wheelofFortuneSports = ["Football", "Basketball", "Hockey", "Soccer", "Tennis", "Volleyball", "Baseball", "Cricket", "Rugby", "Golf"];
+const wheelofFortuneSummer = ["Sun", "Rain", "Beach", "Hot", "Cruise", "Pool", "Ocean", "Swimming", "Camping", "Hiking"];
+const wheelofFortuneWinter = ["Snow", "Ice", "Cold", "Winter", "Winter Olympics", "Snowboarding", "Ice Skating", "Skiing", "Snowmobiling", "Snowshoeing"];
+const wheelofFortuneTravel = ["Car", "Plane", "Train", "Bus", "Boat", "Cruise", "Hiking", "Camping", "Adventure", "Vacation"];
 
 document.getElementById("reset").addEventListener("click", () => {
     console.log("resetting...");
@@ -112,6 +128,9 @@ randomNumberGuessingUpperBoundInput.onkeyup = () => {
  */
 blackjackCashInput.onkeyup = () => {
     blackjackProfitOutput.value = blackjackCashInput.value * 2;
+}
+wheelofFortuneCashInput.onkeyup = () => {
+    wheelofFortuneProfitOutput.value = wheelofFortuneCashInput.value * 2;
 }
 
 randomNumberGuessingSubmit.addEventListener("click", () => {
@@ -456,4 +475,99 @@ blackjackPlayBtn.addEventListener("click", () => {
     }
 })
 
+wheelofFortunePlayBtn.addEventListener("click", () => {
+    let wheelofFortuneWord;
+    let executeOnce = false;
+    wheelofFortuneCash = Number(wheelofFortuneCashInput.value);
+    if (isNaN(wheelofFortuneCash) || wheelofFortuneCash <= 0 || wheelofFortuneCash > localStorage.getItem("totalCash")) {
+        window.alert("Invalid input, must be a number greater than 0 and less than or equal to your current cash");
+    }
+    else {
+        wheelofFortunePlay = true;
+        wheelofFortuneProfit = wheelofFortuneCash * 2;
+    }
+    while (wheelofFortunePlay === true) {
+        if (executeOnce === false) {
+            wheelofFortuneCategory = wheelofFortuneCategories[Math.floor(Math.random() * wheelofFortuneCategories.length)];
+            switch (wheelofFortuneCategory) {
+                case "Games":
+                    wheelofFortuneWord = wheelofFortuneGames[Math.floor(Math.random() * wheelofFortuneGames.length)];
+                    break;
+                case "Foods":
+                wheelofFortuneWord = wheelofFortuneFoods[Math.floor(Math.random() * wheelofFortuneFoods.length)];
+                break;
+                case "Movies":
+                    wheelofFortuneWord = wheelofFortuneMovies[Math.floor(Math.random() * wheelofFortuneMovies.length)];
+                    break;
+                case "Music":
+                    wheelofFortuneWord = wheelofFortuneMusic[Math.floor(Math.random() * wheelofFortuneMusic.length)];
+                    break;
+                case "Sports": 
+                    wheelofFortuneWord = wheelofFortuneSports[Math.floor(Math.random() * wheelofFortuneSports.length)];
+                    break;
+                case "Summer":
+                    wheelofFortuneWord = wheelofFortuneSummer[Math.floor(Math.random() * wheelofFortuneSummer.length)];
+                    break;
+                case "Winter":
+                    wheelofFortuneWord = wheelofFortuneWinter[Math.floor(Math.random() * wheelofFortuneWinter.length)];
+                    break;
+                case "Travel":
+                    wheelofFortuneWord = wheelofFortuneTravel[Math.floor(Math.random() * wheelofFortuneTravel.length)];
+                    break; 
+            }
+            executeOnce = true;
+        }
+        window.alert(`The category for your word is ${wheelofFortuneCategory}, press ok to begin guessing`);
+        let guessing = true;
+        let wheelofFortuneGuess;
+        let hiddenWheelofFortuneWord = [""];
+        let index = 0;
+        splitWheelofFortuneWord = wheelofFortuneWord.split("");
+        for (let i = 0; i < (splitWheelofFortuneWord.length - 1); i++) {
+            hiddenWheelofFortuneWord.push("_");
+        }
+        console.log(splitWheelofFortuneWord);
+        while (guessing === true) {
+            wheelofFortuneGuess = window.prompt(`Guess the word: "${hiddenWheelofFortuneWord.join(" ")}" (Make sure first letter is capitalized)`);
+            if (wheelofFortuneGuess === wheelofFortuneWord) {
+                window.alert(`You guessed the word "${wheelofFortuneWord}" correctly!`);
+                totalCash = totalCash + wheelofFortuneProfit;
+                localStorage.setItem("totalCash", totalCash);
+                document.getElementById("headerHeading").textContent = `Cash: $${totalCash} -BK's Tycoon- CPS: $${CPS}`;
+                guessing = false;
+                wheelofFortunePlay = false;
+            }
+            else if (wheelofFortuneGuess === null) {
+                window.alert("You did not guess the word");
+                totalCash = totalCash - wheelofFortuneProfit;
+                localStorage.setItem("totalCash", totalCash);
+                guessing = false;
+                wheelofFortunePlay = false;
+            }
+            else {
+                if (index < wheelofFortuneWord.length) {
+                    window.alert(`Wrong word`);
+                    console.log(hiddenWheelofFortuneWord[index]);
+                    console.log(splitWheelofFortuneWord[index]);
+                    hiddenWheelofFortuneWord[index] = splitWheelofFortuneWord[index];
+                    console.log(hiddenWheelofFortuneWord);
+                    console.log(splitWheelofFortuneWord);
+                    index++;
+                    console.log(index);
+                    wheelofFortuneProfit = Math.floor(wheelofFortuneProfit / 2);
+                }
+                else {
+                    window.alert(`The word was ${wheelofFortuneWord}, you lost`);
+                    totalCash = totalCash - wheelofFortuneCash;
+                    localStorage.setItem("totalCash", totalCash);
+                    document.getElementById("headerHeading").textContent = `Cash: $${totalCash} -BK's Tycoon- CPS: $${CPS}`;
+                    guessing = false;
+                    wheelofFortunePlay = false;
+                    break;
+                }
+            }
+        }
+        wheelofFortunePlay = false;
+    }
+})
 
