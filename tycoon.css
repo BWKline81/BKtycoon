@@ -1,0 +1,437 @@
+body{
+    font-family: Verdana;
+    margin: 0;
+    background-image: url("Screenshot 2024-10-22 at 18-27-37 Tycoon Simulator.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+#headerHeading{
+    text-align: center;
+}
+#header{
+    background-color: darkgreen;
+    margin-top: 0px;
+    text-align: center;
+    border-left: white 3px solid;
+    border-top: white 3px solid;
+    border-right: grey 3px solid;
+    border-bottom: grey 3px solid;
+    text-shadow: 0.5px 0.5px white;
+    height: 10vh;
+    @media screen and (max-width: 600px) {
+        font-size: 0.8em;
+    }
+}
+#moneyBtn{
+    background-image: linear-gradient(to bottom right, rgb(255, 255, 140), gold, yellow, goldenrod);
+    border: 5px solid gold;
+    border-radius: 250px;
+    font-size: 10em;
+    padding: auto;
+    padding-left: auto;
+    padding-right: auto;
+    width: 100%;
+    height: 100%;
+    max-width: 400px;
+    max-height: 400px;
+    transition: background-image 0.2s ease;
+}
+#moneyBtnDiv{
+    margin-top: 10%;
+    text-align: center;
+    display: inline-block;
+    margin-left: 17.5%;
+    width: 50%;
+    height: 50vh;
+}
+#moneyBtnDollarSign{
+    font-size: 8em;
+    padding-top: none;
+}
+#moneyBtn:hover{
+    cursor: pointer;
+    background-image: linear-gradient(to bottom right, rgb(255, 255, 140), yellow, yellow, gold);
+}
+#moneyBtn:active{
+    background-image: linear-gradient(to bottom right, rgb(255, 255, 140), rgb(255, 255, 140), rgb(255, 255, 140), yellow);
+}
+#sidebar{
+    background-color: darkgreen;
+    margin-top: 0px;
+    text-align: center;
+    border-left: white 3px solid;
+    border-top: none;
+    border-bottom: grey 3px solid;
+    border-right: grey 3px solid;
+    float: left;
+    width: 15%;
+    height: 100vh;
+}
+.nav{
+    display: inline-block;
+    margin-bottom: 50%;
+    border: 3px solid slategrey;
+    background-image: linear-gradient(to bottom right, white, lightgrey, grey, darkgrey, slategrey);
+    color: white;
+    height: 10%;
+    width: 85%;
+    padding-left: auto;
+    padding-right: auto;
+    border-radius: 30px;
+    transition: background-image 0.2s ease;
+}
+#clicker{
+    margin-top: 10%;
+}
+.nav:hover{
+    cursor: pointer;
+    background-image: linear-gradient(to bottom right, white, lightgrey, lightgrey, darkgrey);
+}
+.nav:active{
+    background-image: linear-gradient(to bottom right, white, white, lightgrey, lightgrey);
+}
+.nav a{
+    text-decoration: none;
+    color: inherit;
+    @media screen and (max-width: 600px) {
+        font-size: 0.7em;
+    }
+}
+#upgradesDiv{
+    display: grid;
+    grid-template-rows: repeat(4, minmax(150px, 1.0fr));
+    grid-template-columns: repeat(2, minmax(150px, 1.5fr));
+    height: 89.5vh;
+    text-align: center;
+    grid-gap: 1em;
+    align-items: center;
+    margin-left: 17.5%;
+    margin-top: 15px;
+}
+.upgrades{
+    background-color: green;
+    width: 75%;
+    height: 85%;
+    margin: auto;
+    grid-row: span 1;
+    grid-column: span 1;
+    border: 3px solid black;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.38em;
+    text-shadow: 0.5px 0.5px black;
+    @media screen and (max-width: 600px) {
+        font-size: 1em;
+    }
+}
+#universalDiv{
+    background-color: green;
+    width: 75%;
+    height: 85%;
+    margin: auto;
+    grid-row: span 1;
+    grid-column: span 3;
+    border: 3px solid black;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.38em;
+    text-shadow: 0.5px 0.5px black;
+}
+.upgrade{
+    background-color: teal;
+    width: 25%;
+    height: 37.5%;
+    margin-left: 6%;
+    margin-right: auto;
+    font-size: 1.5em;
+    border: 3px solid black;
+    border-radius: 10px;
+    color: white;
+    text-shadow: 0.5px 0.5px white;
+    transition: background-color 0.2s ease;
+    float: left;
+}
+#universalDiv{
+    grid-column: 1 / 2;
+}
+.upgrade:hover{
+    cursor: pointer;
+    background-color: rgb(0, 179, 179);
+}
+.upgrade:active{
+    background-color: rgb(6, 227, 227);
+}
+.fa-solid.fa-lemon{
+    color: yellow;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+.fa-solid.fa-car{
+    color: rgb(166, 3, 3);
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+.fa-solid.fa-pizza-slice{
+    color: rgb(223, 145, 0);
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+.fa-solid.fa-cart-shopping{
+    color: silver;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+.fa-solid.fa-rocket{
+    color: rgb(255, 255, 255);
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+.fa-solid.fa-piggy-bank{
+    color: pink;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+.fa-solid.fa-earth-americas{
+    color: rgb(68, 171, 255);
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+.fa-solid.fa-computer-mouse{
+    color: grey;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+.fa-solid.fa-atom{
+    color: rgb(211, 0, 0);
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+.upgrade2{
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(2, 50%);
+}
+.icon21{
+    font-size: 49%;
+    grid-row: 1 / 1;
+    grid-column: 1 / 1;
+}
+.icon22{
+    font-size: 49%;
+    grid-row: 2 / 2;
+    grid-column: 2 / 2;
+}
+.upgrade3{
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(2, 50%);
+}
+.icon31{
+    font-size: 40%;
+    grid-row: span 1;
+    grid-column: span 2;
+}
+.icon32{
+    font-size: 40%;
+    grid-row: 2 / 2;
+    grid-column: 1 / 1;
+}
+.icon33{
+    font-size: 40%;
+    grid-row: 2 / 2;
+    grid-column: 2 / 2;
+}
+.businessScreenDiv{
+    display: grid;
+    grid-template-rows: repeat(3, minmax(100px, 1fr));
+    grid-template-columns: repeat(2, minmax(150px, 1.5fr));
+    height: 89.5vh;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 3em;
+    align-items: center;
+    margin-left: 17.5%;
+    margin-top: 15px;
+}
+.businessDiv{
+    text-align: center;
+    background-color: green;
+    color: white;
+    border: 3px solid black;
+    border-radius: 10px;
+    text-shadow: 0.5px 0.5px black;
+    margin: auto;
+    width: 75%;
+    height: 75%;
+    font-size: 1.35em;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-rows: repeat(2, 50%);
+    grid-template-columns: repeat(3, 33.33%);
+    @media screen and (max-width: 600px) {
+        font-size: 1em;
+    }
+}
+#lemonadeStand, #lemonadeStandDiv{
+    box-shadow: 2px 2px 3px rgb(196, 231, 0) , -2px -2px 3px rgb(196, 231, 0);
+}
+#carWash, #carWashDiv{
+    box-shadow: 2px 2px 3px rgb(231, 12, 0) , -2px -2px 3px rgb(231, 12, 0);
+}
+#pizzaChain, #pizzaChainDiv{
+    box-shadow: 2px 2px 3px rgb(231, 166, 0) , -2px -2px 3px rgb(231, 166, 0);
+}
+#supermarket, #supermarketDiv{
+    box-shadow: 2px 2px 3px rgb(159, 159, 159) , -2px -2px 3px rgb(159, 159, 159);
+}
+#spaceAgency, #spaceAgencyDiv{
+    box-shadow: 2px 2px 3px rgb(0, 64, 107) , -2px -2px 3px rgb(0, 64, 107);
+}
+#bank, #bankDiv{
+    box-shadow: 2px 2px 3px rgb(0, 0, 0) , -2px -2px 3px rgb(0, 0, 0);
+}
+#universalDiv{
+    box-shadow: 2px 2px 3px blue, -2px -2px 3px blue;
+}
+#clickerUpgradeDiv{
+    box-shadow: 2px 2px 3px rgb(112, 112, 112), -2px -2px 3px rgb(112, 112, 112);
+}
+#reset{
+    font-size: 0.5em;
+}
+
+.businessBtns{
+    font-size: 1.25em;
+    width: 60%;
+    height: 65%;
+    background-color: teal;
+    border: 3px solid black;
+    border-radius: 10px;
+    color: white;
+    text-shadow: 0.5px 0.5px white;
+    transition: background-color 0.2s ease;
+    margin-left: auto;
+    margin-right: auto;
+}
+.businessBtns:hover{
+    cursor: pointer;
+    background-color: rgb(0, 179, 179);
+}
+.businessBtns:active{
+    background-color: rgb(6, 227, 227);
+}
+.businessCounts{
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.25em;
+    width: 60%;
+    height: 65%;
+    background-color: teal;
+    border: 3px solid black;
+    border-radius: 10px;
+    color: white;
+    text-shadow: 0.5px 0.5px white;
+    transition: background-color 0.2s ease;
+}
+.businessCount{
+    margin-top: 0%;
+    display: inline-block;
+    margin-bottom: 20%;
+    height: 10%;
+}
+.businessHeader{
+    grid-row: 1 / 1;
+    grid-column: 1 / 4;
+    margin-bottom: 10%;
+    font-size: 125%;
+}
+.gamblingScreenDiv{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(3, 33.33%);
+    height: 89.5vh;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    row-gap: 3em;
+    align-items: center;
+    margin-left: 17.5%;
+    margin-top: 15px;
+}
+.gamblingDiv{
+    text-align: center;
+    background-color: green;
+    color: white;
+    border: 3px solid black;
+    border-radius: 10px;
+    background-color: green;
+    color: white;
+    border: 3px solid black;
+    border-radius: 10px;
+    text-shadow: 0.75px 0.75px black;
+    margin: auto;
+    width: 75%;
+    height: 75%;
+    font-size: 1.35em;
+    display: grid;
+    grid-template-rows: repeat(3, 33.33%);
+    grid-template-columns: repeat(2, 50%);
+    align-items: center;
+    justify-content: center;
+}
+.gamblingHeader{
+    font-size: 1.1em;
+    @media screen and (max-width: 600px) {
+        font-size: 0.9em;
+    }
+}
+.gamblingLabels{
+    font-size: 0.9em;
+    @media screen and (max-width: 600px) {
+        font-size: 0.7em;
+    }
+}
+#randomNumberGuessingCashLabel{
+    font-size: 0.8em;
+    @media screen and (max-width: 600px) {
+        font-size: 0.6em;
+    }
+}
+.gamblingInputs{
+    width: 50%;
+    background-color: slategrey;
+    border: 3px solid black;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+}
+#randomNumberGuessingSubmit{
+    width: 75%;
+    padding-left: 12.5%;
+    padding-right: 12.5%;
+}
+.gamblingBtns{
+    font-size: 1.25em;
+    width: 60%;
+    height: 65%;
+    background-color: teal;
+    border: 3px solid black;
+    border-radius: 10px;
+    color: white;
+    text-shadow: 0.5px 0.5px white;
+    transition: background-color 0.2s ease;
+}
+.gamblingBtns:hover{
+    cursor: pointer;
+    background-color: rgb(0, 179, 179);
+}
+.gamblingBtns:active{
+    background-color: rgb(6, 227, 227);
+}
+.blackjackDiv{
+    grid-row: span 2;
+}
+@media screen and (min-width: 1200px){
+    #sidebar{
+        height: 125vh;
+    }
+}

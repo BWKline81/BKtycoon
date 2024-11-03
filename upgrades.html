@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="tycoon.css">
+    <script
+      src="https://kit.fontawesome.com/e204ed81de.js"
+      crossorigin="anonymous"
+    ></script>
+</head>
+<body>
+    <div id="header">
+        <header id="heading" class="header">
+            <h1 id="headerHeading">BK's Tycoon</h1>
+        </header>
+    </div>
+    <div id="sidebar">
+        <button id="clicker" class="nav">
+            <a href="tycoon.html" title="Clicker">Clicker →</a>
+        </button>
+        <button id="businesses" class="nav">
+            <a href="business.html" title="Businesses">Businesses →</a>
+        </button>
+        <button id="upgrades" class="nav">
+            <a href="upgrades.html" title="Upgrades">Upgrades →</a>
+        </button>
+        <button class="nav" id="gamble">
+            <a href="gamble.html" title="Gamble">Gambling →</a>
+        </button>
+        <button id="reset">
+            Reset
+        </button>
+    </div>
+    <div id="upgradesDiv">
+        <div id="lemonadeStandDiv" class="upgrades">
+            <p class="upgradesHeader">Lemonade Stand 🍋</p>
+            <button class="upgrade upgrade1" title="Cost: $1000, reduces price of lemonade stand to $90" id="lemonUpgrade1">
+                <i class="fa-solid fa-lemon lemonIcons icon1"></i>
+            </button>
+            <button class="upgrade upgrade2" id="lemonUpgrade2" title="Cost: $2500, multiplies CPS of lemonade stands by 2">
+                <i class="fa-solid fa-lemon icon21" id="lemonIcon21"></i>
+                <i class="fa-solid fa-lemon icon22" id="lemonIcon22"></i>
+            </button>
+            <button class="upgrade upgrade3" id="lemonUpgrade3" title="Cost: $5000, doubles speed of lemonade stands">
+                <i class="fa-solid fa-lemon icon31" id="lemonIcon31"></i>
+                <i class="fa-solid fa-lemon icon32" id="lemonIcon32"></i>
+                <i class="fa-solid fa-lemon icon33" id="lemonIcon33"></i>
+            </button>
+        </div>
+        <div id="carWashDiv" class="upgrades">
+            <p class="upgradesHeader">Car Wash 🚗</p>
+            <button class="upgrade upgrade1" title="Cost: $5000, reduces price of car wash to $400" id="carWashUpgrade1">
+                <i class="fa-solid fa-car icon1" id="carWashIcon1"></i>
+            </button>
+            <button class="upgrade upgrade2" id="carWashUpgrade2" title="Cost: $10000, multiplies CPS of car washes by 2">
+                <i class="fa-solid fa-car icon21" id="carWashIcon21"></i>
+                <i class="fa-solid fa-car icon22" id="carWashIcon22"></i>
+            </button>
+            <button class="upgrade upgrade3" id="carWashUpgrade3" title="Cost: $25000, further multiplies CPS of car washes by 2">
+                <i class="fa-solid fa-car icon31" id="carWashIcon31"></i>
+                <i class="fa-solid fa-car icon32" id="carWashIcon32"></i>
+                <i class="fa-solid fa-car icon33" id="carWashIcon33"></i>
+            </button>
+        </div>
+        <div id="pizzaChainDiv" class="upgrades">
+            <p class="upgradesHeader">Pizza Chain 🍕</p>
+            <button class="upgrade upgrade1" id="pizzaChainUpgrade1" title="Cost: $25000, reduces price of pizza chain to $2000">
+                <i class="fa-solid fa-pizza-slice icon1"></i>
+            </button>
+            <button class="upgrade upgrade2" id="pizzaChainUpgrade2" title="Cost: $50000, multiplies CPS of pizza chains by 2">
+                <i class="fa-solid fa-pizza-slice icon21"></i>
+                <i class="fa-solid fa-pizza-slice icon22"></i>
+            </button>
+            <button class="upgrade upgrade3" id="pizzaChainUpgrade3" title="Cost: $100000, further multiplies CPS of pizza chains by 2">
+                <i class="fa-solid fa-pizza-slice icon31"></i>
+                <i class="fa-solid fa-pizza-slice icon32"></i>
+                <i class="fa-solid fa-pizza-slice icon33"></i>
+            </button>
+        </div>
+        <div id="supermarketDiv" class="upgrades">
+            <p class="upgradesHeader">Supermarket 🛒</p>
+            <button class="upgrade upgrade1" id="supermarketUpgrade1" title="Cost: $100000, reduces price of supermarket to $7500">
+                <i class="fa-solid fa-cart-shopping icon1"></i>
+            </button>
+            <button class="upgrade upgrade2" id="supermarketUpgrade2" title="Cost: $250000, multiplies CPS of supermarket by 2">
+                <i class="fa-solid fa-cart-shopping icon21"></i>
+                <i class="fa-solid fa-cart-shopping icon22"></i>
+            </button>
+            <button class="upgrade upgrade3" id="supermarketUpgrade3" title="Cost: $500000, further multiplies CPS of supermarkets by 3">
+                <i class="fa-solid fa-cart-shopping icon31"></i>
+                <i class="fa-solid fa-cart-shopping icon32"></i>
+                <i class="fa-solid fa-cart-shopping icon33"></i>
+            </button>
+        </div>
+        <div id="spaceAgencyDiv" class="upgrades">
+            <p class="upgradesHeader">Space Agency 🚀</p>
+            <button class="upgrade upgrade1" id="spaceAgencyUpgrade1" title="Cost: $500000, reduces price of space agency to $200000">
+                <i class="fa-solid fa-rocket icon1"></i>
+            </button>
+            <button class="upgrade upgrade2" id="spaceAgencyUpgrade2" title="Cost: $1000000, multiplies CPS of space agency by 2">
+                <i class="fa-solid fa-rocket icon21"></i>
+                <i class="fa-solid fa-rocket icon22"></i>
+            </button>
+            <button class="upgrade upgrade3" id="spaceAgencyUpgrade3" title="Cost: $5000000, further multiplies CPS of supermarkets by 4">
+                <i class="fa-solid fa-rocket icon31"></i>
+                <i class="fa-solid fa-rocket icon32"></i>
+                <i class="fa-solid fa-rocket icon33"></i>
+            </button>
+        </div>
+        <div id="bankDiv" class="upgrades">
+            <p class="upgradesHeader">Bank 🏧</p>
+            <button class="upgrade upgrade1" id="bankUpgrade1" title="Cost: $5000000, reduces price of bank to $750000">
+                <i class="fa-solid fa-piggy-bank icon1"></i>
+            </button>
+            <button class="upgrade upgrade2" id="bankUpgrade2" title="Cost: $10000000, multiplies CPS of bank by 2">
+                <i class="fa-solid fa-piggy-bank icon21"></i>
+                <i class="fa-solid fa-piggy-bank icon22"></i>
+            </button>
+            <button class="upgrade upgrade3" id="bankUpgrade3" title="Cost: $50000000, further multiplies CPS of banks by 5">
+                <i class="fa-solid fa-piggy-bank icon31"></i>
+                <i class="fa-solid fa-piggy-bank icon32"></i>
+                <i class="fa-solid fa-piggy-bank icon33"></i>
+            </button>
+        </div>
+        <div id="universalDiv">
+            <p class="upgradesHeader">Universal 🌎</p>
+            <button class="upgrade upgrade1" id="universalUpgrade1" title="Cost: 1000000, reduce all business prices by 10%">
+                <i class="fa-solid fa-earth-americas icon1"></i>
+            </button>
+            <button class="upgrade upgrade2" id="universalUpgrade2" title="Cost: 10000000, doubles the CPS of all businesses">
+                <i class="fa-solid fa-earth-americas icon21"></i>
+                <i class="fa-solid fa-earth-americas icon22"></i>
+            </button>
+            <button class="upgrade upgrade3" id="universalUpgrade3" title="Cost: 1000000000, multiplies all CPS by 10">
+                <i class="fa-solid fa-earth-americas icon31"></i>
+                <i class="fa-solid fa-earth-americas icon32"></i>
+                <i class="fa-solid fa-earth-americas icon33"></i>
+            </button>
+        </div>
+        <div class="upgrades" id="clickerUpgradeDiv">
+            <p class="upgradesHeader">Clicker 🖱️/Temp.</p>
+            <button class="upgrade upgrade1" id="clickerUpgrade1" title="Cost: $100000, increases CPC to 10">
+                <i class="fa-solid fa-computer-mouse"></i>
+            </button>
+            <button class="upgrade upgrade2" id="clickerUpgrade2" title="Cost: $1000000, increases CPC further to 100">
+                <i class="fa-solid fa-computer-mouse icon21"></i>
+                <i class="fa-solid fa-computer-mouse icon22"></i>
+            </button>
+            <button class="upgrade upgrade1" id="tempUpgrade1" title="Cost: $50000, boosts CPC by 50% for 1 minute, 3 minute cooldown">
+                <i class="fa-solid fa-atom"></i>
+            </button>
+        </div>
+    </div>
+    <script src="index.js"></script>
+    <script src="upgrades.js"></script>
+</body>
+</html>
